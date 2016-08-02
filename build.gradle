@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+ext {
+    akkaVersion = "2.4.8"
+}
+
+dependencies {
+    compile "org.apache.logging.log4j:log4j-slf4j-impl:2.6.2"
+    compile "org.apache.logging.log4j:log4j-core:2.6.2"
+
+    compile "com.typesafe.akka:akka-actor_2.11:$akkaVersion"
+    compile "com.typesafe.akka:akka-cluster-tools_2.11:$akkaVersion"
+    compile "com.typesafe.akka:akka-slf4j_2.11:$akkaVersion"
+
+    testCompile 'junit:junit:4.12'
+    testCompile "com.typesafe.akka:akka-testkit_2.11:$akkaVersion"
+}
+
+apply plugin: 'application'
+
+mainClassName = "com.github.lpedrosa.akka.scheduler.SchedulingExample"
