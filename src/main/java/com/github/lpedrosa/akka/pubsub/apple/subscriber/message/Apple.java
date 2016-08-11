@@ -22,7 +22,4 @@ public final class Apple {
         return color;
     }
 
-    public String toTopic() {
-        return "apple:" + this.brand;
-    }
 }
